@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="number" min="1">
+        <input type="button" value="ok" onclick="songuyento()">
+        <div id="ketqua"></div>
+    </form>
+    <script>
+        function songuyento(){
+           
+            let numbers = + document.getElementById("number").value;
+            let count = 0;
+            let N = 2;
+            let ketqua = "";
+            while (count < numbers)
+            {   
+                if(isSNT(N)) {
+                    ketqua +=  N + ' ';
+                    count++;
+                }
+                N++;
+            }
+            document.getElementById("ketqua").innerHTML= ketqua;
+        }
+        function isSNT(number)
+            {
+                if(number === 2 || number === 3) {
+                    return true;
+                }
+                for (let i = 2;i <= Math.sqrt(number);i++){
+                    if (number%i === 0){
+                        return false;
+                    }
+                }
+                return true;
+            }
+    </script>
+</body>
+</html>
