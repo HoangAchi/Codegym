@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let tdn = prompt("nhập tên đăng nhập",'');
+    if (tdn == 'Admin')
+    {
+        let mk = prompt("nhập mậu khẩu");
+        if(mk == 'TheMaster')
+            alert("Welcome");
+        else if (mk  == null)
+            alert("canceld");
+        else alert ("Wrong Password")
+    }else if (tdn = null) alert ("canceld");
+    else alert("I don't know you");
+    </script>
+</body>
+</html>

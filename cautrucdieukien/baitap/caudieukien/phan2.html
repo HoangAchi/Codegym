@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Chuyển từ độ C sang độ F.</h3>
+        <tr>
+            <td><input type="number" id="dof"></td>
+            <td><input type="button" value="độ C sang độ F" onclick="chuyendoi()"></td>
+            <div id="nhietdo"></div>
+        </tr>
+    <h3>Chuyển từ mét sang feet</h3>
+        <tr>
+            <td><input type="number" id="feet"></td>
+            <td><input type="button" value="từ met sang feet" onclick="chuyendoi1()"></td>
+            <div id="dodai"></div>
+        </tr>
+    <h3>Tính diện tích hình vuông khi biết cạnh a.</h3>
+        <tr>
+            <td><input type="number" id="canh"></td>
+            <td><input type="button" value="tính diện tích" onclick="tinhtoan()"></td>
+            <div id="dientich"></div>
+        </tr>
+    <h3>Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h3>
+        <tr>
+            <td><input type="number" id="a"></td>
+            <td><input type="number" id="b"></td>
+            <td><input type="button" value="tính diện tích" onclick="tinhtoan1()"></td>
+            <div id="dientich1"></div>
+        </tr>
+    <h3>Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h3>
+         <tr>
+            <td><input type="number" id="c"></td>
+            <td><input type="number" id="d"></td>
+            <td><input type="button" value="tính diện tích" onclick="tinhtoan2()"></td>
+            <div id="dientich2"></div>
+        </tr>
+    <h3>Giải phương trình bậc 1.</h3>
+        <tr>
+            <td><input type="number" id="e"></td>
+            <td><input type="number" id="f"></td>
+            <td><input type="button" value="giải phương trình bậc 1" onclick="phuongtrinh()"></td>
+            <div id="ketqua"></div>
+        </tr>
+    <h3>Giải phương trình bậc 2.</h3>
+        <tr>
+            <td><input type="number" id="x"></td>
+            <td><input type="number" id="y"></td>
+            <td><input type="number" id="z"></td>
+            <td><input type="button" value="giải phương trình bậc 2" onclick="phuongtrinh1()"></td>
+            <div id="ketqua1"></div>
+        </tr>
+    <h3>Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</h3>
+    <tr>
+        <td><input type="number" id="tuoi"></td>
+        <td><input type="button" value="kiểm tra tuổi" onclick="tuoi()"></td>
+        <div id="hienthituoi"></div>
+    </tr>
+    <h3>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:</h3>
+    <tr>
+        <td><input type="number" id="canh1"></td>
+        <td><input type="number" id="canh2"></td>
+        <td><input type="number" id="canh3"></td>
+        <td><input type="button" value="cạnh của một tam giác" onclick="tamgiac()"></td>
+        <div id="tamgiac"></div>
+    </tr>
+    <h3>Viết chương trình tính giá điện.</h3>
+    <tr>
+        <td><input type="number" id="kwh"></td>
+        <td><input type="button" value="giá tiền điện" onclick="tiendien()"></td>
+        <div id="tiendien"></div>
+    </tr>
+    <h3>Viết chương trình tính thuế thu nhập cá nhân.</h3>
+    <tr>
+        <td><input type="number" id="thunhap"></td>
+        <td><input type="button" value="thuế" onclick="thue()"></td>
+        <div id="thue"></div>
+    </tr>
+    <h3>Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</h3>
+    <script src="phan2.js"></script>
+</body>
+</html>

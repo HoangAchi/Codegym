@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><img id="img1" src="image/dem1.jpg"  alt="image/dem1.jpg"  width="200px" onclick="ChangeImage(this)"/></td>
+            <td><img id="img2" src="image/bien2.jpg" alt="image/bien2.jpg" width="200px" onclick="ChangeImage(this)"/></td>
+            <td><img id="img3" src="image/troi3.jpg" alt="image/troi3.jpg" width="200px" onclick="ChangeImage(this)"/></td>
+        </tr>
+        <tr>
+            <td><img id="img4" src="image/bien4.jpg" alt="image/bien4.jpg" width="200px" onclick="ChangeImage(this)"/></td>
+            <td><img id="img5" src="image/dem5.jpg"  alt="image/dem5.jpg"  width="200px" onclick="ChangeImage(this)"/></td>
+            <td><img id="img6" src="image/troi6.jpg" alt="image/troi6.jpg" width="200px" onclick="ChangeImage(this)"/></td>
+        </tr>
+        <tr>
+            <td><img id="img7" src="image/troi7.jpg" alt="image/troi7.jpg" width="200px" onclick="ChangeImage(this)"/></td>
+            <td><img id="img8" src="image/bien8.jpg" alt="image/bien8.jpg" width="200px" onclick="ChangeImage(this)"/></td>
+            <td><img id="img9" src="image/dem9.jpg"  alt="image/dem9.jpg"  width="200px" onclick="ChangeImage(this)"/></td>
+        </tr>
+    </table>
+    <script>
+        var imageDem = ["dem1.jpg","dem2.jpg","dem3.jpg","dem4.jpg","dem5.jpg","dem6.jpg","dem7.jpg","dem8.jpg","dem9.jpg",
+                        "bien1.jpg","bien2.jpg","bien3.jpg","bien4.jpg","bien5.jpg","bien6.jpg","bien7.jpg","bien8.jpg","bien9.jpg",
+                        "troi1.jpg","troi2.jpg","troi3.jpg","troi4.jpg","troi5.jpg","troi6.jpg","troi7.jpg","troi8.jpg","troi9.jpg"];
+        function ChangeImage(control) 
+        {
+            var img1 = control.src;
+            var num = Math.floor (Math.random() * 27);
+            resultImage = 'image/' + imageDem[num];
+            control.src = resultImage;
+        }
+        function setImgaeRandom(){         
+        }
+    </script>
+</body>
+</html>
