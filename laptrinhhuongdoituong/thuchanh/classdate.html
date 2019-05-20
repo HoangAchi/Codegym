@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+<body>
+    
+</body>
+<script>
+    alert("Xây dựng lớp Date");
+    let myDate = function(day, month, year){
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    this.getDay = function(){
+        return this.day;
+    }
+    this.getMonth = function(){
+        return this.month;
+    }
+    this.getYear = function(){
+        return this.year;
+    }
+    this.setDay = function(day){
+        this.day = day;
+    }
+    this.setMonth = function(month){
+        this.month = month;
+    }
+    this.setYear = function(year){
+        this.year = year;
+    }
+    };
+    let Date = new myDate(2, 2, 2007);
+    let day = Date.getDay();
+    let month = Date.getMonth();
+    let year = Date.getYear();
+    alert(day + "/" + month + "/" + year);
+    Date.setDay(10);
+    Date.setMonth(10);
+    Date.setYear(2019);
+    alert(Date.day + "/" + Date.month + "/" + Date.year);
+</script>
+</html>

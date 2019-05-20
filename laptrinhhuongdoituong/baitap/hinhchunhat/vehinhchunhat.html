@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h3>Xây dựng lớp mô tả hình chữ nhật</h3>
+    <canvas id="mycanvas" width="300px" height="300px" style="border: 1px solid #d3d3d3;"></canvas>
+</body>
+<script>
+    let Rectangle = function(chieudai, chieurong) {
+        this.chieudai = chieudai;
+        this.chieurong = chieurong;
+        this.getchuvi = function() {
+            return (chieudai + chieurong) * 2;
+        }
+        this.getdientich = function() {
+            return chieudai * chieurong;
+        }
+    }
+
+    function createrectangle() {
+        let taohinhchunhat = document.getElementById("mycanvas").getContext("2d");
+        rectangle = new Rectangle(50, 150);
+        taohinhchunhat.beginPath();
+        taohinhchunhat.rect(30, 30, rectangle.chieurong, rectangle.chieudai);
+        taohinhchunhat.fill();
+    }
+    createrectangle();
+    let chuvi = rectangle.getchuvi();
+    let dientich = rectangle.getdientich();
+    document.write("<br> chu vi hình chữ nhật là " + chuvi + "<br>");
+    document.write("Diện tích hình chữ nhật là " + dientich + "<br>");
+</script>
+
+</html>

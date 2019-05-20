@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h3>Xây dựng lớp mô tả Temperature</h3>
+    <input type="number" id="doC">
+    <input type="button" value="chuyen doi" onclick="chuyendoidoc()">
+    <div id="doF"></div>
+    <div id="doK"></div>
+</body>
+<script>
+    function Temperature(doC) {
+        this.doC = doC;
+        this.getdoC = function() {
+            return doC;
+        }
+        this.getdoF = function() {
+            return this.doC * 1.8000 + 32;
+        }
+        this.getdoK = function() {
+            return this.doC + 273.15;
+        }
+    };
+
+    function chuyendoidoc() {
+        let result = document.getElementById("doC").value;
+        let chuyendoi = new Temperature(result);
+        let getdoF = chuyendoi.getdoF();
+        let getdoK = chuyendoi.getdoK();
+        document.getElementById("doF").innerHTML = "độ C sang độ F " + getdoF;
+        document.getElementById("doK").innerHTML = "độ C sang độ K " + getdoK;
+    }
+</script>
+
+</html>
