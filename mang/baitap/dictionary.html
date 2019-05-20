@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dictionary</title>
+</head>
+
+<body>
+    <form name="dictionary">
+        <input type="text" id="nhap">
+        <input type="button" onclick="sreach()" value="tra cứu">
+        <div id="result"></div>
+    </form>
+</body>
+<script>
+    let english = ["hello", "skill", "attitude", "experience"];
+    let vietnam = ["xin chào", "kĩ năng", "thái độ", "kinh nghiệm"];
+
+    function sreach() {
+        let nhap = document.getElementById("nhap").value;
+        for (let i = 0; i < english.length; i++) {
+            if (nhap == english[i]) {
+                document.getElementById("result").innerHTML = "từ tiếng việt là " + vietnam[i];
+                break;
+            } else {
+                document.getElementById("result").innerHTML = "không có từ tiếng việt cần tìm";
+            }
+        }
+    }
+</script>
+
+</html>
