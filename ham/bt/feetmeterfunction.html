@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+    <h3>Chuyển đổi từ feet sang meters</h3>
+    <input type="number" id="feet">
+    <input type="button" value="feet sang meter" onclick="chuyendoifeet()">
+    <div id="ketquameter"></div>
+    <h3>Chuyển đổi từ meters sang feet</h3>
+    <input type="number" id="meter">
+    <input type="button" value="meter sang feed" onclick="chuyendoimeter()">
+    <div id="ketquafeet"></div>
+</body>
+<script>
+    function chuyendoifeet(){
+        let feet = parseFloat(document.getElementById("feet").value);
+        let ketquameter = feet * 0.305;
+        document.getElementById("ketquameter").innerHTML = "chuyển đổi từ feet sang meter có giá trị là "+ ketquameter;
+    }
+    function chuyendoimeter(){
+        let meter = parseFloat(document.getElementById("meter").value);
+        let ketquafeet = meter * 3.279;
+        document.getElementById("ketquafeet").innerHTML = "chuyển đổi từ meter sang feet có giá trị là "+ ketquafeet;
+    }
+</script>
+</html>

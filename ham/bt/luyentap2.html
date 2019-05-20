@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+    <h3>Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+    <input type="number" id="so">
+    <input type="button" value="giá trị bình phương" onclick="binhphuong()">
+    <div id="result"></div>
+    <h3>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được.</h3>
+    <input type="number" id="radius">
+    <input type="button" value="chu vi và diện tích hình tròn" onclick="hinhtron()">
+    <div id="result1"></div>
+    <h3>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+    <input type="number" id="songuyen">
+    <input type="button" value="giai thừa" onclick="giaithuasonguyen()">
+    <div id="result2"></div>
+    <h3>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</h3>
+    <input type="text" id="kytu">
+    <input type="button" onclick="kiemtra()" value="kiểm tra số hay chữ">
+    <div id="result3"></div>
+    <h3>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</h3>
+    <input type="number" id="sothunhat">
+    <input type="number" id="sothuhai">
+    <input type="number" id="sothuba">
+    <input type="button" value="giá trị nhỏ nhất" onclick="mingiatri()">
+    <div id="result4"></div>
+    <h3>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.</h3>
+    <input type="number" id="nhapso">
+    <input type="button" onclick="kiemtrasonguyen()" value="kiểm tra số nguyên dương">
+    <div id="result5"></div>
+    <h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
+    <input type="number" id="so1">
+    <input type="number" id="so2">
+    <input type="button" value="đổi chỗ 2 số" onclick="doicho()">
+    <div id="result6"></div>
+    <h3>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</h3>
+    <input type="button" onclick="mangdao()" value="đảo giá trị mảng">
+    <div id="result7"></div>
+    <h3>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. 
+        Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </h3>
+    <input type="text" id="mangkytu">
+    <input type="button" value="kiểm tra giá trị trong mảng" onclick="mangkytu()">
+    <div id="result8"></div>
+</body>
+<script>
+    function binhphuong(){
+        let so = parseFloat(document.getElementById("so").value);
+        let result = so * so;
+        document.getElementById("result").innerHTML = "bình phương của số " + so + " là "+ result;
+    }
+    function hinhtron(){
+        let radius = parseFloat(document.getElementById("radius").value);
+        let chuvi = radius * 2 * 3.14;
+        let dientich = radius * radius * 3.14;
+        document.getElementById("result1").innerHTML = "chu vi hình tròn là " + chuvi + "<br> diện tích hình tròn là " + dientich;
+    }
+    function giaithuasonguyen(){
+        let songuyen = document.getElementById("songuyen").value;
+        let giaithua = 1;
+        if (songuyen === 0 || songuyen === 1){
+            return giaithua;
+        } else {
+            for (i = 2; i <= songuyen; i++){
+                giaithua *=i;
+                document.getElementById("result2").innerHTML = giaithua;
+            }
+        } 
+        return giaithua;
+    }
+    function kiemtra(){
+        let kytu = document.getElementById("kytu").value;
+        if(isNaN(kytu)== false){
+            document.getElementById("result3").innerHTML = "ký tự nhập vào là số ";
+        } else{
+            document.getElementById("result3").innerHTML = "ký tự nhập vào là chữ ";
+        }
+    }
+    function mingiatri(){
+        let sothunhat = parseInt(document.getElementById("sothunhat").value);
+        let sothuhai = parseInt(document.getElementById("sothuhai").value);
+        let sothuba = parseInt(document.getElementById("sothuba").value);
+        let min = sothunhat;
+        if (min > sothuhai){
+            min = sothuhai;
+            document.getElementById("result4").innerHTML =  min;
+        } else if (min > sothuba){
+            min = sothuba;
+            document.getElementById("result4").innerHTML =  min;
+        } else
+            document.getElementById("result4").innerHTML =  min;
+    }
+    function kiemtrasonguyen(){
+        let nhapso = parseFloat(document.getElementById("nhapso").value);
+        if (nhapso >0){
+            document.getElementById("result5").innerHTML = nhapso + " là số nguyên dương";
+        } else if (nhapso <0){
+            document.getElementById("result5").innerHTML = nhapso + "là số nguyên âm";
+        } else
+            document.getElementById("result5").innerHTML = nhapso + " là số 0";
+    }
+    function doicho(){
+        let so1 = parseFloat(document.getElementById("so1").value);
+        let so2 = parseFloat(document.getElementById("so2").value);
+        let k = so1;
+        so1 = so2;
+        so2 = k;
+        document.getElementById("result6").innerHTML = "số 1: " + so1 +  " số 2:" + so2;
+    }
+    function mangdao(){
+        thongbao = ["I"," ","love"," ", "you"];
+        alert(thongbao.join(""));
+        dao = thongbao.reverse();
+        alert(dao.join(""));
+    }
+    function mangkytu(){
+        let mangkytu = document.getElementById("mangkytu").value;
+        let mangkiemtra = ["Hoàng","Đức","San","Phụng"];
+        for (let i = 0; i< mangkiemtra.length;i++){
+            if (mangkytu === mangkiemtra[i]){
+                document.getElementById("result8").innerHTML = "ký tự có trong mảng là " +mangkiemtra[i];
+                break;
+            }else{
+                document.getElementById("result8").innerHTML = "-1";
+            }
+        }
+    }
+</script>
+</html>

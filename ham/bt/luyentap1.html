@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+
+<body>
+    <h3>Bài 1: Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi "Xin chao".</h3>
+    <input type="button" value="gọi hàm" onclick="alertMessage()">
+    <div id="thongbao"></div>
+    <h3>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.</h3>
+    <input type="text" id="sonhapvao">
+    <input type="button" value="truyền vào" onclick="doiso()">
+    <div id="ketqua"></div>
+    <h3>Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.
+        <br>Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</h3>
+    <input type="number" id="sothunhat">
+    <input type="number" id="sothuhai">
+    <input type="button" onclick="giatri()" value="so sánh 2 số">
+    <div id="tong"></div>
+    <h3>bài 4: Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã sau để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm.</h3>
+    <div id="truoc"></div>
+    <div id="sau">sau khi alert</div>
+    <h3>Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus.
+        <br>Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo.
+        <br>Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất.
+        <br>Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao.
+        <br>Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai.
+        <br>Nói cách khác, trả lại tên chòm sao của ngôi sao đó.
+        <br>Trong phần của trang web, dùng hộp thoại prompt để người dùng nhập vào tên của ngôi sao, sau đó gọi hàm với thông tin đầu vào.
+        <br>Đừng quên xử lý trong trường hợp không tìm thấy ngôi sao nào. Cho kết quả hiển thị trên màn hình.</h3>
+    <input type="text" id="tenngoisao">
+    <input type="button" value="chòm sao tương ứng" onclick="ngoisaosang()">
+    <div id="ngoisaonote"></div>
+</body>
+<script>
+    function alertMessage() {
+        document.getElementById("thongbao").innerHTML = "xin chào";
+    }
+
+    function doiso() {
+        let number = parseInt(document.getElementById("sonhapvao").value);
+        ketqua = number + 1;
+        document.getElementById("ketqua").innerHTML = ketqua;
+    }
+
+    function giatri() {
+        let sothunhat = parseFloat(document.getElementById("sothunhat").value);
+        let sothuhai = parseFloat(document.getElementById("sothuhai").value);
+        let tong = sothunhat + sothuhai
+        if (sothunhat > sothuhai) {
+            alert("số thứ nhất lớn hơn số thứ hai");
+        } else {
+            document.getElementById("tong").innerHTML = "tổng hai số là " + tong;
+        }
+    }
+
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+    result = 0;
+    document.getElementById("truoc").innerHTML = ("trước khi alert giá trị của result là " + result + "<br>");
+    result = addNumbers();
+    document.getElementById("sau").innerHTML = ("sau khi alert giá trị của result là " + result + "<br>");
+
+
+
+    let ngoisao = ['Polaris', "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let chomsao = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function ngoisaosang() {
+        let tenngoisao1 = document.getElementById("tenngoisao").value;
+
+        for (let i = 0; i < ngoisao.length; i++) {
+            if (tenngoisao1 === ngoisao[i]) {
+                document.getElementById("ngoisaonote").innerHTML = "chòm sao tương ứng với ngôi sao là " + chomsao[i];
+                break;
+            } else {
+                document.getElementById("ngoisaonote").innerHTML = "không tìm thấy ngôi sao nào";
+            }
+        }
+    }
+</script>
+
+</html>
