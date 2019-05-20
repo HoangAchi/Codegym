@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <input type="image" id="myImage" src="pic_bulbon.gif" style="width:100px"><br><br><br>
+    <div class="switch">
+        <input type="checkbox" id="mycheck" onclick="thaydoi()">
+        <label><i></i></label>
+    </div>
+    <br>
+    <div id="result"></div>
+</body>
+<script>
+    function ElectricLamp() {
+        this.status = false;
+        this.turnOn = function() {
+            this.status = true;
+        }
+        this.turnOff = function() {
+            this.status = false;
+        }
+    }
+
+    function SwitchButton(den) {
+        this.status = false;
+        this.connectToLamp = function() {
+            if (this.status === false)
+                this.status = true;
+            else this.status = false;
+        }
+        this.swtichoff = function() {
+            if (this.status = false) {
+                den.status = true;
+            }
+        }
+        this.swtichon = function() {
+            if (this.status = true) {
+                den.status = true;
+            }
+        }
+    }
+    var den = new ElectricLamp();
+
+    var congtac = new SwitchButton(den);
+
+    function thaydoi() {
+        var checkbox = document.getElementById("mycheck");
+        congtac.connectToLamp();
+        if (checkbox.checked == true) {
+            congtac.swtichoff();
+            document.getElementById("myImage").src = "pic_bulboff.gif";
+        } else {
+            congtac.swtichon();
+            document.getElementById("myImage").src = "pic_bulbon.gif";
+        }
+    }
+</script>
+
+</html>

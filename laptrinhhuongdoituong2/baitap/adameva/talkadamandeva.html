@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <input type="button" value="Adam" onclick="adam()"><br>
+    <div id="result"></div>
+    <input type="button" value="Eva" onclick="eva()"><br>
+</body>
+<script>
+    function Apple(weight) {
+        this.weight = 10;
+        this.decrease = function() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+            return this.weight;
+        }
+        this.isEmpty = function() {
+            if (weight === true) {
+                alert("táo đã hết");
+            } else {
+                return this.weight;
+            }
+        }
+        this.getWeight = function() {
+            return this.weight;
+        }
+    }
+
+    function Human(name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.isMale = function() {
+            if (this.gender) {
+                return this.gender = "Nam";
+            } else {
+                return this.gender = "Nữ";
+            }
+        }
+        this.setGender = function(gender) {
+            this.gender = gender;
+        }
+        this.checkApple = function(apple) {
+            return this.Apple.getWeight();
+        }
+        this.eat = function(apple) {
+            apple.decrease();
+        }
+        this.say = function(talk) {
+            this.talk = "I am Human";
+        }
+        this.getName = function() {
+            return this.name;
+        }
+        this.setName = function(name) {
+            this.name = name;
+        }
+        this.getWeight = function() {
+            return this.weight
+        }
+        this.setWeight = function(weight) {
+            this.weight = weight;
+        }
+    }
+    var appleGreen = new Apple();
+    var appleweight = appleGreen.getWeight();
+    document.getElementById("result").innerHTML = "trái táo ban đầu có khối lượng là" + appleweight;
+    var human = new Human("Adam", "Nam", "50");
+    var human1 = new Human("Eva", "Nữ", "45");
+
+    function adam() {
+        human.eat(appleGreen);
+        document.getElementById("result").innerHTML = "Adam ăn một miếng còn lại khối lượng là" + (appleGreen.getWeight());
+    }
+
+    function eva() {
+        human1.eat(appleGreen);
+        document.getElementById("result").innerHTML = "Eva ăn một miếng còn lại khối lượng là" + (appleGreen.getWeight());
+    }
+</script>
+
+</html>
