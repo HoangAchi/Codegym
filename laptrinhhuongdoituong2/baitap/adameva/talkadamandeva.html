@@ -64,6 +64,9 @@
             this.name = name;
         }
         this.getWeight = function() {
+            if (this.weight) {
+                this.weight++;
+            }
             return this.weight
         }
         this.setWeight = function(weight) {
@@ -77,13 +80,16 @@
     var human1 = new Human("Eva", "Nữ", "45");
 
     function adam() {
+        let cannang = human.getWeight();
         human.eat(appleGreen);
-        document.getElementById("result").innerHTML = "Adam ăn một miếng còn lại khối lượng là" + (appleGreen.getWeight());
+        document.getElementById("result").innerHTML = "Adam ăn một miếng còn lại khối lượng là" + appleGreen.getWeight() + "Trọng lượng của adam là" + cannang;
+
     }
 
     function eva() {
+        let cannang1 = human1.getWeight();
         human1.eat(appleGreen);
-        document.getElementById("result").innerHTML = "Eva ăn một miếng còn lại khối lượng là" + (appleGreen.getWeight());
+        document.getElementById("result").innerHTML = "Eva ăn một miếng còn lại khối lượng là" + appleGreen.getWeight() + "trọng lượng của eva là" + cannang1;
     }
 </script>
 
