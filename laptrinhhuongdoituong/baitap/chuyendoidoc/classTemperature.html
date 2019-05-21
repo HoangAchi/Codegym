@@ -16,15 +16,17 @@
     <div id="doK"></div>
 </body>
 <script>
-    function Temperature(doC) {
-        this.doC = doC;
-        this.getdoC = function() {
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        getdoC() {
             return doC;
         }
-        this.getdoF = function() {
+        getdoF() {
             return this.doC * 1.8000 + 32;
         }
-        this.getdoK = function() {
+        getdoK() {
             return this.doC + 273.15;
         }
     };
