@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <input type="image" id="myImage" src="pic_bulbon.gif" style="width:100px"><br><br><br>
+    <input type="image" id="myImage" src="pic_bulbon.gif" style="width:200px"><br><br><br>
     <div class="switch">
         <input type="checkbox" id="mycheck" onclick="thaydoi()">
         <label><i></i></label>
@@ -19,29 +19,32 @@
     <div id="result"></div>
 </body>
 <script>
-    function ElectricLamp() {
-        this.status = false;
-        this.turnOn = function() {
+    class ElectricLamp {
+        constructor() {
+            this.status = false;
+        }
+        turnOn() {
             this.status = true;
         }
-        this.turnOff = function() {
+        turnOff() {
             this.status = false;
         }
     }
-
-    function SwitchButton(den) {
-        this.status = false;
-        this.connectToLamp = function() {
+    class SwitchButton {
+        constructor(den) {
+            this.status = false;
+        }
+        connectToLamp() {
             if (this.status === false)
                 this.status = true;
             else this.status = false;
         }
-        this.swtichoff = function() {
+        swtichoff() {
             if (this.status = false) {
                 den.status = true;
             }
         }
-        this.swtichon = function() {
+        swtichon() {
             if (this.status = true) {
                 den.status = true;
             }
