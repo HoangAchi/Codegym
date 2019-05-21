@@ -81,26 +81,28 @@
     </div>
 </body>
 <script>
-    function Mobile(battery) {
-        this.battery = 100;
-        this.hopthuden = [];
-        this.hopthudi = [];
-        this.dagui = [];
-        this.status = true;
-        this.setmessage = function(tinnhan) {
+    class Mobile {
+        constructor(battery) {
+            this.battery = 100;
+            this.hopthuden = [];
+            this.hopthudi = [];
+            this.dagui = [];
+            this.status = true;
+        }
+        setmessage(tinnhan) {
             this.tinnhan = tinnhan;
         }
-        this.getmessage = function() {
+        getmessage() {
             return this.tinnhan;
         }
-        this.sendmessage = function(message) {
+        sendmessage(message) {
             this.hopthudi.push(message);
         }
-        this.laymessage = function(message) {
+        laymessage(message) {
             this.hopthuden.push(message);
             return this.hopthuden[0];
         }
-    };
+    }
 
     let nokia = new Mobile(100);
 
