@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h3>Đếm số nguyên âm/phụ âm trong một chuỗi</h3>
+    <input type="text" id="nhapvaochuoi">
+    <input type="button" value="kiemtra" onclick="phuamhaynguyenam()">
+    <div id="result"></div>
+</body>
+<script>
+    function phuamhaynguyenam() {
+        let nhapvaochuoi = document.getElementById("nhapvaochuoi").value;
+        let soluongnguyenam = 0;
+        let soluongphuam = 0;
+        for (let i = 0; i < nhapvaochuoi.length; i++) {
+            if (nguyenam(nhapvaochuoi[i])) {
+                soluongnguyenam++;
+            } else {
+                soluongphuam++;
+            }
+        }
+        document.getElementById("result").innerHTML = "số lượng nguyên âm trong chuỗi là " + soluongnguyenam + "<br>số lượng phụ âm trong chuỗi là" + soluongphuam;
+    }
+
+    function nguyenam(str) {
+        songuyenam = /^[oaeui]$/;
+        if (songuyenam.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h3>Kiểm tra mã số bảo mật hợp lệ</h3>
+    <input type="text" id="maso">
+    <input type="button" value="kiemtra" onclick="maso()">
+    <div id="result"></div>
+</body>
+<script>
+    function maso() {
+        let maso = document.getElementById("maso").value;
+        check = /^[0-9]+(1234)$/;
+        if (check.test(maos)) {
+            document.write("mã số bảo mật hợp lệ");
+        } else {
+            document.write("mã số bảo mật không hợp lệ");
+        }
+    }
+</script>
+
+</html>

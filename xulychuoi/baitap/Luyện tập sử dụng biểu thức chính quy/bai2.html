@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h3>Đếm số từ trong một chuỗi</h3>
+    <input type="text" id="sotu">
+    <input type="button" value="đếm số từ trong chuỗi" onclick="demsotu()">
+    <div id="result"></div>
+</body>
+<script>
+    function demsotu() {
+        let nhap = document.getElementById("sotu").value;
+        check = nhap.length;
+        document.getElementById("result").innerHTML = "số lượng từ trong chuỗi là " + check;
+    }
+</script>
+
+</html>
