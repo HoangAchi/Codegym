@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h3>Làm việc với Math</h3>
+    <input type="button" onclick="sinhMuoiSo()" value="sinh 10 số">
+    <div id="result"></div>
+    <input type="button" onclick="sinhBonTramSo()">
+    <input type="button" onclick="sinhSoNamMuoidenmottram()">
+</body>
+<script>
+    function sinhMuoiSo() {
+        var numten = [];
+        for (var i = 0; i < 10; i++) {
+            numten[i] = Math.floor(Math.random() * 11);
+
+        }
+        document.getElementById("result").innerHTML = (numten + " ");
+    }
+</script>
+
+</html>
