@@ -10,15 +10,41 @@
 
 <body>
     <h3>Làm việc với Date</h3>
-    <input type="number" id="nam">
-    <input type="button" value="kiểm tra date" onclick="ngay()">
+    <input type="number" id="nhapnam">năm<br>
+    <input type="number" id="nhapthang">tháng<br>
+    <input type="number" id="nhapngay">ngày<br>
+    <input type="number" id="nhapgio">giờ<br>
+    <input type="number" id="nhapphut">phút<br>
+    <input type="number" id="nhapgiay">giây<br>
+    <input type="button" value="kiểm tra " onclick="ngay()">
     <div id="result"></div>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+    <div id="result5"></div>
 </body>
 <script>
     function ngay() {
         var live = new Date();
-        let nam = document.getElementById("nam").value;
-        let nam1 = live.getFullYear();
+        let namsinh = document.getElementById("nhapnam").value;
+        let thangsinh = document.getElementById("nhapthang").value;
+        let ngaysinh = document.getElementById("nhapngay").value;
+        let giosinh = document.getElementById("nhapgio").value;
+        let phutsinh = document.getElementById("nhapphut").value;
+        let giaysinh = document.getElementById("nhapgiay").value;
+        let nam = live.getFullYear() - namsinh;
+        let thang = live.getMonth() - thangsinh;
+        let ngay = live.getDay() - ngaysinh;
+        let gio = live.getHours() - giosinh;
+        let phut = live.getMinutes() - phutsinh;
+        let giay = live.getSeconds() - giaysinh;
+        document.getElementById("result").innerHTML = "tôi đã sống " + nam + " năm";
+        document.getElementById("result1").innerHTML = "tôi đã sống " + (nam * 12 + thang) + " tháng";
+        document.getElementById("result2").innerHTML = "tôi đã sống " + (nam * 12 * 365 + thang + ngay) + " ngày";
+        document.getElementById("result3").innerHTML = "tôi đã sống " + (nam * 12 * 365 * 24 + thang + ngay + gio) + " giờ";
+        document.getElementById("result4").innerHTML = "tôi đã sống " + (nam * 12 * 365 * 24 * 60 + thang + ngay + gio + phut) + " phút";
+        document.getElementById("result5").innerHTML = "tôi đã sống " + (nam * 12 * 365 * 24 * 60 * 60 + thang + ngay + gio + phut + giay) + " giây";
     }
 </script>
 
