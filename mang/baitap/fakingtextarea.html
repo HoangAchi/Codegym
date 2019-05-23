@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+    <h2>Type anthing slowly</h2>
+    <form name="form">
+        <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+    </form>
+</body>
+<script>
+    var mang = ["H", "ô", "m", " ", "N", "a", "y", " ", "T", "ô", "i", " ", "B", "u", "ồ", "n"],
+        chuoi = "";
+
+    function typeTextarea() {
+        text = document.form.txt.value;
+        j = text.length;
+        if (j > 0) {
+            for (var i = 0; i < j; i++) {
+                chuoi = chuoi + mang[i];
+                if (i === 16) {
+                    document.form.txt.value = "";
+                    chuoi = "";
+                }
+            }
+        }
+        document.form.txt.value = chuoi;
+        chuoi = "";
+        setTimeout("typeTextarea()", 10);
+        //return false;
+    }
+</script>
+
+</html>
