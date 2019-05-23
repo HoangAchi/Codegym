@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nguyễn Đức Thanh Hoàng C0419H1</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var nums = [];
+    for (var i = 0; i < 100; ++i) {
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+
+    function sapxep() {
+        nums.sort(function(a, b) {
+            return a - b
+        });
+        document.write(nums);
+    }
+    sapxep(nums);
+    let nhap = parseInt(prompt("Enter a value to count: "));
+
+    function dem() {
+        let count = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] === nhap) {
+                count++;
+            }
+        }
+        document.write("số lần phần tử xuất hiện trong mảng là " + count);
+    }
+    dem(nhap);
+</script>
+
+</html>
